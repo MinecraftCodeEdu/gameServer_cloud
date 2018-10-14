@@ -1,0 +1,15 @@
+/world
+/world_nether
+/world_the_end
+/logs
+banned-ips.json
+ibanned-players.json
+bukkit.yml
+commands.yml
+help.yml
+ops.json
+permissions.yml
+spigot.yml
+usercache.json
+whitelist.json
+/node-modules
