@@ -96,7 +96,7 @@ app.post('/jscode', function(req, res, next) {
     req.on('data', data => {
 	minecraftid = req.user.local.username;
         body += data.toString();
-        fs.writeFile(path.join(__dirname + "/../../scriptcraft/plugins/users/" + minecraftid +".js"), body, function(err) {
+        fs.writeFile(path.join(__dirname + "/../../scriptcraft/plugins/users/" + minecraftid +"_client.js"), body, function(err) {
             if(err) {
                 return console.log(err);
             }
