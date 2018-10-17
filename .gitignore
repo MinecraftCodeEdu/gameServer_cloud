@@ -12,4 +12,6 @@ permissions.yml
 spigot.yml
 usercache.json
 whitelist.json
+banned-players.json
 /node-modules
+

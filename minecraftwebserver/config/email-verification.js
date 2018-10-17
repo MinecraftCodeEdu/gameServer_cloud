@@ -12,7 +12,7 @@ module.exports = function(nev){
             service:"Gmail",
             auth: {
                 user: 'johnnypark0201@gmail.com',
-                pass: 'qkrwnsdn97@'
+                pass: 'secret'
             }
         },
         verifyMailOptions: {
