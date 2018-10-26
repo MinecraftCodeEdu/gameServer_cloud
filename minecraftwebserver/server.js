@@ -23,6 +23,8 @@ var session      = require('express-session');
 
 var configDB = require('./config/database.js');
 
+require('dotenv').config();
+
 // https =========================================================================
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/game.coalasw.com/privkey.pem', 'utf8');
 const certificate = fs.readFileSync('/etc/letsencrypt/live/game.coalasw.com/cert.pem', 'utf8');
@@ -61,7 +63,7 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 
 // required for passport
 app.use(session({
-    secret: 'coalaswbestcodingeducation', // session secret
+    secret: process.env.SESSION_SECRET, // session secret
     resave: true,
     saveUninitialized: true
 }));

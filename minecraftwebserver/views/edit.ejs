@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <title>사용자 수정</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        body         { padding-top:80px; }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3">
+
+    <h1><span class="fa fa-sign-in"></span> 마인크래프트 닉네임 변경 </h1>
+
+
+    <!-- LOGIN FORM -->
+    <form action="/edit" method="post">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" name="username" value="<%= user.local.username  %>">
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg">Confirm</button>
+    </form>
+
+    <hr>
+
+
+    <div class="text-center">
+    	<p>홈페이지로 이동 <a href="https://www.coalasw.com">coalaSW</a>.</p>
+    </div>
+
+</div>
+</div>
+</body>
+</html>

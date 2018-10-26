@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <title>패스워드 재설정 화면</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        body         { padding-top:80px; }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3">
+
+    <h1><span class="fa fa-sign-in"></span> 재설정</h1>
+
+
+    <!-- LOGIN FORM -->
+    <form action="/reset/<%= token %>" method="post">
+        <div class="form-group">
+            <label>새로운 패스워드</label>
+            <input type="password" class="form-control" name="password">
+        </div>
+        <div class="form-group">
+            <label>패스워드 확인</label>
+            <input type="password" class="form-control" name="confirmed">
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg">패스워드 업데이트</button>
+    </form>
+
+    <hr>
+
+    <div class="text-center">
+    	<p>홈페이지로 이동 <a href="https://www.coalasw.com">coalaSW</a>.</p>
+    </div>
+
+</div>
+</div>
+</body>
+</html>

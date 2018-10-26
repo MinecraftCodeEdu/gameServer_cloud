@@ -280,7 +280,12 @@ Blockly.JavaScript['onmobkilled'] = function(block) { /* 동물이 죽었을 때
 events.entityDeath( function( event ) {\n\
   var player = event.getEntity().getKiller();\n\
   var playerId = player.name;\n\
-  if( "+playerid+" == playerId ) {\n\
+  var entity = event.getEntity();\n\
+  var theDrone = new Drone(entity.getLocation());\n\
+  global.theDrone = theDrone;\n\
+  global.theDrone.up();\n\
+  global.theDrone.chkpt('start');\n\
+  if( '"+playerid+"' == playerId ) {\n\
     if( event.getEntity().getType() == '"+value_mob+"' ) {\n"
 	+ statements_command +"\
     } //entityType endif\n\

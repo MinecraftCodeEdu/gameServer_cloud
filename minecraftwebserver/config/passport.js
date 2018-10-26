@@ -69,34 +69,21 @@ module.exports = function(passport, nev) {
         passwordField : 'password',
         passReqToCallback : true // allows us to pass in the req from our route (lets us check if a user is logged in or not)
     },
+
     function(req, email, password, done) {
         if (email)
             email = email.toLowerCase(); // Use lower-case e-mails to avoid case-sensitive e-mail matching
 
+	var regExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
+	if(email.length == 0 || req.body.username.length == 0) {
+	  return done(null, false, req.flash('signupMessage', '가입양식을 다 기입하지 않았습니다.')); 
+	}
+	if(!email.match(regExp)){
+	  return done(null, false, req.flash('signupMessage', '이메일 형식이 맞지 않습니다.'));
+	}
+
         // asynchronous
         process.nextTick(function() {
-/*
-	   nev.createTempUser(User, function(err, existingPersistentUser, newTempUser){
-	    if(err) return done(err);
-            if(existingPersistentUser){
-                console.log('You have already signed up and confirmed your account. Did you forget your password?');
-                return done(null);
-            }
-            if(newTempUser){
-                var URL = newTempUser[nev.options.URLFieldName];
-                nev.sendVerificationEmail(email, URL, function(err, info){
-                    if(err) return done(err);
-                    console.log('An email has been sent to you. Please check it to verify your account.');
-                    return done(null, newTempUser);
-                })
-            } else {
-                console.log('You have already signed up. Please check your email to verify your account.');
-                return done(null);
-            }   
-
-
-	});
-*/
 
             // if the user is not already logged in:
             if (!req.user) {
@@ -136,6 +123,46 @@ module.exports = function(passport, nev) {
 
         });
 
-    }));
+    })
+
+/*
+    function(req, email, password, done){
+	if (email)
+            email = email.toLowerCase(); // Use lower-case e-mails to avoid case-sensitive e-mail matching
+
+	// asynchronous
+        process.nextTick(function() {
+          // create the user
+          var newUser            = new User();
+          newUser.local.email    = email;
+          newUser.local.username = req.body.username;
+          newUser.local.password = newUser.generateHash(password);
+
+           nev.createTempUser(newUser, function(err, existingPersistentUser, newTempUser){
+             if(err) console.error(err);
+             if(existingPersistentUser){
+		console.log('You have already signed up and confirmed your account. Did you forget your password?');
+                return done(null);
+             }
+             if(newTempUser){
+                var URL = newTempUser[nev.options.URLFieldName];
+                nev.sendVerificationEmail(email, URL, function(err, info){
+                    if(err) console.error(err);
+		    console.log('An email has been sent to you. Please check it to verify your account.');
+                    return done(null, newTempUser);
+                })
+             } else {
+		console.log('You have already signed up. Please check your email to verify your account.');
+                return done(null);
+             }
+          });
+	
+	});
+
+
+    })
+*/
+
+  );
 
 };

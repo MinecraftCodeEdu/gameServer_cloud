@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
 <head>
-    <title>Node Authentication</title>
+    <title>코알라소프트웨어 프로필화면</title>
+    <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <style>
@@ -25,10 +26,9 @@
 
                 <% if (user.local.email) { %>
                     <p>
-                        <strong>id</strong>: <%= user._id %><br>
                         <strong>email</strong>: <%= user.local.email %><br>
-			<strong>minecraftID</strong>: <%= user.local.username %><br>
-                        <strong>password</strong>: <%= user.local.password %>
+			<strong>minecraftID</strong>: <%= user.local.username %> <a href="/edit" class="btn btn-default btn-sm">수정</a> <br>
+                        <!--<strong>password</strong>: <%= user.local.password %> -->
                     </p>
                 <% } %>
 
@@ -41,7 +41,7 @@
     </div>
 
     <div class="text-center">
-        <p>A demo by <a href="https://www.coalasw.com">Jun</a>.</p>
+    	<p>홈으로 이동 <a href="/">HOME</a>.</p>
     </div>
 
 </div>

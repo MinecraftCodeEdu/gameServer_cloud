@@ -2,7 +2,7 @@
 var User = require('../app/models/user');
 module.exports = function(nev){
     nev.configure({
-        verificationURL: 'http://localhost/email-verification/${URL}',
+        verificationURL: 'https://game.coalasw.com/email-verification/${URL}',
         URLLength: 48,
         // mongo-stuff
         persistentUserModel: User,
@@ -10,9 +10,11 @@ module.exports = function(nev){
         // emailing options
         transportOptions: {
             service:"Gmail",
+	    host: 'localhost',
+	    port: '465',
             auth: {
-                user: 'johnnypark0201@gmail.com',
-                pass: 'secret'
+                user: 'coalasoftware@gmail.com',
+                pass: 'coalasw0409'
             }
         },
         verifyMailOptions: {
@@ -24,7 +26,7 @@ module.exports = function(nev){
         },
         shouldSendConfirmation: true,
         confirmMailOptions: {
-            from: 'Do Not Reply <user@gmail.com>',
+            from: 'Do Not Reply <ff@naver.com>',
             subject: 'Successfully verified!',
             html: '<p>Your account has been successfully verified.</p>',
             text: 'Your account has been successfully verified.'

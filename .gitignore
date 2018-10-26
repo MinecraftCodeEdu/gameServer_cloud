@@ -14,4 +14,4 @@ usercache.json
 whitelist.json
 banned-players.json
 /node-modules
-
+nohup.out

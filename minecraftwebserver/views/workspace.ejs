@@ -57,9 +57,11 @@
                         <!-- <td class="tabmin">&nbsp;</td> -->
                         <td id="tab_xml" class="taboff" style="display: none;">XML IS INVISIBLE</td>
                         <td class="tabmax">
-
-			   <a href="/logout" class="btn btn-default btn-sm">Logout</a></br>
-<strong>minecraftID</strong>: <input type="text" id="mcid" value="<%= user.local.username %>" readonly></br>
+			   <p>
+			     <a href="/profile" class="btn btn-default btn-sm">프로필 이동</a>
+			     <a href="/logout" class="btn btn-default btn-sm">로그아웃</a>
+			  </p>
+<strong>minecraftID</strong>: <input type="text" id="mcid" value="<%= user.local.username %>" readonly>
 
 			    <!-- <button onclick="Code.savexml()">Save XML</button> -->
 			    <button onclick="filePrompt()">파일저장</button>
