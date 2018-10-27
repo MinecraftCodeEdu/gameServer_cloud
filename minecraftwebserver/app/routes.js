@@ -35,7 +35,9 @@ module.exports = function(app, passport) {
 
     // show the home page (will also have our login links)
     app.get('/', function(req, res) {
-        res.render('index.ejs');
+        res.render('index.ejs', {
+	  user : req.user
+	});
     });
 
     // PROFILE SECTION =========================
@@ -51,6 +53,7 @@ module.exports = function(app, passport) {
         res.redirect('/');
     });
 
+    // EDIT =================================
     app.get('/edit', isLoggedIn, function(req, res) {
 
 	res.render('edit.ejs', {
@@ -85,7 +88,7 @@ module.exports = function(app, passport) {
 
     });
 
-
+    // FORGOT ========================================
     app.get('/forgot', function(req, res) {
 
 	res.render('forgot.ejs', {
@@ -167,6 +170,7 @@ module.exports = function(app, passport) {
     });
 
 
+    // RESET ===================================================
     app.get('/reset/:token', function(req, res) {
 
 	User.findOne({ 'local.resetPasswordToken' : req.params.token, 'local.resetPasswordExpires': { $gt: Date.now() } }, function(err, user) {
@@ -230,7 +234,7 @@ module.exports = function(app, passport) {
 
         // process the login form
         app.post('/login', bruteforce.prevent, passport.authenticate('local-login', {
-            successRedirect : '/workspace', // redirect to the secure profile section
+            successRedirect : '/', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
@@ -276,12 +280,57 @@ module.exports = function(app, passport) {
     });
 
 
+// WORKSPACE =========================================
+
     app.get('/workspace', isLoggedIn, function(req, res) {
         res.render('workspace.ejs', {
             user : req.user
         });
     });
 
+
+// CONTENTS ===============================================
+
+    app.get('/contents/:id', isLoggedIn, function(req, res) {
+
+	var title = "";
+	switch (req.params.id) {
+	  case '0':
+	    title = "예\xa0제";
+	    break;
+	  case '1':
+	    title = "텔\xa0레\xa0포\xa0트 이\xa0용\xa0하\xa0기";
+	    break;
+	  case '2':
+	    title = "보\xa0물\xa0찾\xa0기";
+            break; 
+	  case '3':
+	    title = "울\xa0타\xa0리 만\xa0들\xa0기";
+            break; 
+	  case '4':
+	    title = "대\xa0규\xa0모\xa0밀\xa0밭 만\xa0들\xa0기";
+            break; 
+	  case '5':
+	    title = "사\xa0냥\xa0하\xa0고 돌\xa0아\xa0오\xa0기";
+            break; 
+	  case '6':
+	    title = "주\xa0크\xa0박\xa0스 만\xa0들\xa0기";
+            break; 
+	  case '7':
+	    title = "롤\xa0러\xa0코\xa0스\xa0터 만\xa0들\xa0기";
+            break; 
+	  case '8':
+	    title = "요\xa0새 만\xa0들\xa0기";
+            break; 
+	}
+        res.render('contents/'+ req.params.id +'.ejs', {
+            user : req.user, title : title
+        });
+    });
+
+
+
+// SAVE FILE ===============================================
 
     app.post('/jscode', function(req, res, next) {
         let body = '';

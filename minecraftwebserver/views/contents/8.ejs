@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <% include ./header.ejs %>
+</head>
+
+<body>
+    <% include ./body.ejs %>
+    <xml id="toolbox" style="display: none">
+		<!-- 요새 만들기 -->
+            <block type="drone"></block>
+			<block type="castle_material"></block>
+			<block type="castle_rectangle">
+					<value name="width">
+					   <block type="math_number">
+					   <field name="NUM">0</field>
+					   </block>
+					</value>
+					<value name="length">
+					   <block type="math_number">
+						<field name="NUM">0</field>
+					   </block>
+				</value>
+			</block>
+			<block type="drone_move"></block>
+			<block type="drone_move_count">
+              <value name="COUNT">
+                <block type="math_number">
+					<field name="NUM">1</field>
+				</block>
+              </value>
+            </block>
+            <block type="controls_repeat_ext">
+                <value name="TIMES">
+                    <block type="math_number">
+                        <field name="NUM">10</field>
+                    </block>
+                </value>
+            </block>
+
+    </xml>
+
+
+</body>
+
+</html>

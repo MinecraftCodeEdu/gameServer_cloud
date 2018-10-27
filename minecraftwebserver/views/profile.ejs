@@ -13,8 +13,9 @@
 <div class="container">
 
     <div class="page-header text-center">
-        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        <h1><span class="fa fa-anchor"></span> 프로필 화면</h1>
+        <a href="/" class="btn btn-default btn-sm"><span class="fa fa-home"></span> 메인화면</a>
+	<a href="/logout" class="btn btn-default btn-sm"><span class="fa fa-sign-out"></span> 로그아웃</a>
     </div>
 
     <div class="row">
@@ -27,7 +28,7 @@
                 <% if (user.local.email) { %>
                     <p>
                         <strong>email</strong>: <%= user.local.email %><br>
-			<strong>minecraftID</strong>: <%= user.local.username %> <a href="/edit" class="btn btn-default btn-sm">수정</a> <br>
+			<strong>minecraftID</strong>: <%= user.local.username %> <a href="/edit" class="btn btn-default btn-sm"><span class="fa fa-edit"></span> 수정</a> <br>
                         <!--<strong>password</strong>: <%= user.local.password %> -->
                     </p>
                 <% } %>
@@ -41,7 +42,7 @@
     </div>
 
     <div class="text-center">
-    	<p>홈으로 이동 <a href="/">HOME</a>.</p>
+    	<p>홈페이지 이동 <a href="https://www.coalasw.com">HOMEPAGE</a>.</p>
     </div>
 
 </div>

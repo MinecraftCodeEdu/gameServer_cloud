@@ -13,5 +13,5 @@ spigot.yml
 usercache.json
 whitelist.json
 banned-players.json
-/node-modules
-nohup.out
+minecraftwebserver/node-modules
+minecraftwebserver/nohup.out

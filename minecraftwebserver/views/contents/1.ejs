@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <% include ./header.ejs %>
+</head>
+
+<body>
+
+   <% include ./body.ejs %>
+   <xml id="toolbox" style="display: none">
+		<!-- 텔레포트 이용하기 -->
+			<block type="teleport_command">
+				<value name="command">
+					<block type="text">
+						<field name="TEXT">teleport</field>
+					</block>
+				</value>
+			</block>
+			<block type="onchat">
+				<value name="command">
+					<block type="text">
+						<field name="TEXT">run</field>
+					</block>
+				</value>
+			</block>
+			<block type="teleport_location">
+			  <value name="NAME">
+				<block type="absolute_location">
+				  <value name="x">
+					<block type="math_number">
+						<field name="NUM">0</field>
+					</block>
+				  </value>
+				  <value name="y">
+					<block type="math_number">
+						<field name="NUM">4</field>
+					</block>
+				  </value>
+				  <value name="z">
+					<block type="math_number">
+						<field name="NUM">0</field>
+					</block>
+				  </value>
+				</block>
+			  </value>
+			</block>
+			<block type="teleport_location">
+			  <value name="NAME">
+				<block type="relative_location">
+				  <value name="x">
+					<block type="math_number"></block>
+				  </value>
+				  <value name="y">
+					<block type="math_number"></block>
+				  </value>
+				  <value name="z">
+					<block type="math_number"></block>
+				  </value>
+				</block>
+			  </value>
+			</block>
+    </xml>
+
+
+</body>
+
+</html>

@@ -393,10 +393,10 @@ Code.importPrettify = function () {
     //<script src="../prettify.js"></script>
     var link = document.createElement('link');
     link.setAttribute('rel', 'stylesheet');
-    link.setAttribute('href', 'google-blockly/demos/prettify.css');
+    link.setAttribute('href', '../google-blockly/demos/prettify.css');
     document.head.appendChild(link);
     var script = document.createElement('script');
-    script.setAttribute('src', 'google-blockly/demos/prettify.js');
+    script.setAttribute('src', '../google-blockly/demos/prettify.js');
     document.head.appendChild(script);
 };
 
@@ -460,7 +460,7 @@ Code.tabClick = function (clickedName) {
         }
         if (xmlDom) {
             Code.workspace.clear();
-            Blockly.Xml.domToWorkspace(xmlDom, Code.workspace);
+     //       Blockly.Xml.domToWorkspace(xmlDom, Code.workspace);
         }
     }
 
@@ -539,7 +539,7 @@ Code.renderContent = function () {
  * Initialize Blockly.  Called on page load.
  */
 Code.init = function () {
-    Code.initLanguage();
+    //Code.initLanguage();
 
     var rtl = Code.isRtl();
     var container = document.getElementById('content_area');
@@ -556,12 +556,6 @@ Code.init = function () {
             el.style.width = bBox.width + 'px';
             el.style.width = (2 * bBox.width - el.offsetWidth) + 'px';
         }
-        // Make the 'Blocks' tab line up with the toolbox.
-        if (Code.workspace && Code.workspace.toolbox_.width) {
-            document.getElementById('tab_blocks').style.minWidth =
-                (Code.workspace.toolbox_.width - 38) + 'px';
-            // Account for the 19 pixel margin and on each side.
-        }
     };
 
     window.addEventListener('resize', onresize, false);
@@ -576,7 +570,7 @@ Code.init = function () {
             snap: true
         },
 */
-        media: 'google-blockly/media/',
+        media: '../google-blockly/media/',
         rtl: rtl,
         toolbox: toolbox,
         zoom: {
@@ -627,13 +621,7 @@ Code.init = function () {
       loadInput1.click();
     };
 
-
-    Code.bindClick('menu_example_hello',
-        function () {
-          Code.loadServerXmlFile('example/hello.xml');
-	});
-
-
+    
     Code.bindClick('trashButton',
         function () {
             Code.discard();
@@ -747,34 +735,14 @@ Code.initLanguage = function () {
     languageMenu.addEventListener('change', Code.changeLanguage, true);
 
     // Inject language strings.
-    document.title += ' ' + MSG.title;
-    document.getElementById('title').textContent = MSG.title;
+    //document.title += ' ' + MSG.title;
+    //document.getElementById('title').textContent = MSG.title;
     document.getElementById('tab_blocks').textContent = MSG.blocks;
     document.getElementById('tab_javascript').textContent = MSG.javascript;
     document.getElementById('linkButton').title = MSG.linkTooltip;
     document.getElementById('deployButton').title = MSG.deployTooltip;
     document.getElementById('trashButton').title = MSG.trashTooltip;
 
-/*     var categories = ['catLogic', 'catLoops', 'catMath', 'catText', 'catLists', 'catFunctions',
-        'catColour', 'catVariables', 'catDrone', 'catInventory', 'catTeleport', 'catFence', 'catFarmland' , 'catFarming', 'catRail', 'catRiding', 'catVillage', 'catTrampoline', 'catRecipe', 'catRanching', 'catTrap', 'catJukebox', 'catCastle', 'catTag', 'catExample',
-		'catHunt', 'catTresure'
-    ]; // 모든 카테고리 */
-	
-	var categories = ['catLogic', 'catLoops', 'catMath', 'catText', 'catLists', 'catFunctions',
-        'catVariables', 'catTeleport', 'catDrone', 'catMob'
-    ]; // 수정된 카테고리
-
-    for (var i = 0, cat; cat = categories[i]; i++) {
-        document.getElementById(cat).setAttribute('name', MSG[cat]);
-    }
-    var textVars = document.getElementsByClassName('textVar');
-    for (var i = 0, textVar; textVar = textVars[i]; i++) {
-        textVar.textContent = MSG.textVariable;
-    }
-    var listVars = document.getElementsByClassName('listVar');
-    for (var i = 0, listVar; listVar = listVars[i]; i++) {
-        listVar.textContent = MSG.listVariable;
-    }
 };
 
 /**
@@ -792,7 +760,7 @@ Code.discard = function () {
 };
 
 // Load the Code demo's language strings.
-document.write('<script src="msg/js/' + Code.LANG + '.js"></script>\n');
+document.write('<script src="../msg/js/' + Code.LANG + '.js"></script>\n');
 // Load Blockly's language strings.
-document.write('<script src="google-blockly/msg/js/' + Code.LANG + '.js"></script>\n');
+document.write('<script src="../google-blockly/msg/js/' + Code.LANG + '.js"></script>\n');
 window.addEventListener('load', Code.init);

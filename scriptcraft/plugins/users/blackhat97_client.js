@@ -1,14 +1,12 @@
 var global = this;
-command( 'blackhat97_tt', function ( parameters, player ) {
-var delay_add=0;
-var theDrone = new Drone(player);
-global.theDrone = theDrone;
-var bkBlockFace = Packages.org.bukkit.block.BlockFace;
-var bkItemStack = Packages.org.bukkit.inventory.ItemStack;
-var bkMaterial = Packages.org.bukkit.Material;
-var bkLocation = Packages.org.bukkit.Location;
-global.theDrone.up();
-global.theDrone.chkpt('start');
-var timeoutStop = new Date().getTime()+500;
-  global.theDrone.box('20');
+command( 'blackhat97_useless', function ( parameters, player ) {
+  var bkLocation = org.bukkit.Location;
+  var x = parameters[0];
+  var y = parameters[1];
+  var z = parameters[2];
+  if(isNaN(Number(x)) || isNaN(Number(y)) || isNaN(Number(z))){
+    player.sendMessage('please input number.');
+  } else {
+    player.teleport(new bkLocation(player.world, x, y, z));
+  }
 });

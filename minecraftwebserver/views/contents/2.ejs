@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <% include ./header.ejs %>
+</head>
+
+<body>
+    <% include ./body.ejs %>
+    <xml id="toolbox" style="display: none">
+		<!-- 보물찾기 -->
+			<block type="onchat">
+				<value name="command">
+					<block type="text">
+						<field name="TEXT">run</field>
+					</block>
+				</value>
+			</block>
+			<block type="directforward">
+				<value name="command">
+					<block type="text">
+						<field name="TEXT">forward</field>
+					</block>
+				</value>
+			</block>
+			<block type="moveforward">
+				<value name="distance">
+					<block type="math_number">
+						<field name="NUM">5</field>
+					</block>
+				</value>
+			</block>
+			<block type="setyaw"></block>	
+			<block type="setdirection"></block>		
+    </xml>
+
+
+</body>
+
+</html>

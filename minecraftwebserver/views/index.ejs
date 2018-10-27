@@ -4,8 +4,6 @@
     <title>코알라소프트웨어 블록코딩 메인화면</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
     <link rel="stylesheet" href="/stylesheets/style.css">
     <style>
         body         { padding-top:80px; }
@@ -17,16 +15,39 @@
     <div class="jumbotron text-center">
         <h1>마인크래프트 블록코딩</h1>
 
-<a href="/profile" class="btn btn-default"><span class="fa fa-address-card"></span> 내정보</a>
-
+	<% if (!user) { %>
         <p>로그인 또는 회원가입</p>
 
-        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
-        <a href="/signup" class="btn btn-default"><span class="fa fa-user-plus"></span> Local Signup</a>
+        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> 로컬 로그인</a>
+        <a href="/signup" class="btn btn-default"><span class="fa fa-user-plus"></span> 로컬 회원가입</a>
+
+	<% } else { %>
+	<a href="/profile" class="btn btn-default"><span class="fa fa-address-card"></span> 내정보</a>
+        <a href="/logout" class="btn btn-default"><span class="fa fa-user"></span> 로그아웃</a>
+
 	<p></p> 
 	<p>블록코딩 작업환경으로 이동</p> 
-	<a href="/workspace" class="btn btn-default"><span class="fa fa-terminal"> WORKSPACE</a></p>
+	<p><a href="/workspace" class="btn btn-default"><span class="fa fa-terminal"> WORKSPACE</a></p>
+	<p></p>
+	<p>콘텐츠</p>
+	
+	<h5>맛보기</h5>
+	<p><a href="/contents/0" class="btn btn-default">예제</a></p>
+	<h5>1단계</h5>
+	<p><a href="/contents/1" class="btn btn-default">텔레포트 이용하기</a>
+	<a href="/contents/2" class="btn btn-default">보물찾기</a>
+	<a href="/contents/3" class="btn btn-default">울타리 만들기</a>	
+	<a href="/contents/4" class="btn btn-default">대규모 밀밭 만들기</a>
+	<a href="/contents/5" class="btn btn-default">사냥하고 돌아오기</a>
+	<a href="/contents/6" class="btn btn-default">주크박스 만들기</a>
+	<a href="/contents/7" class="btn btn-default">롤러코스터 만들기</a>
+	<a href="/contents/8" class="btn btn-default">요새 만들기</a></p>
+	<h5>2단계</h5>
+	<p><a href="/contents/9" class="btn btn-default">마을 짓기</a></p>
+
+	<% } %>
     </div>
+
 
     <div class="text-center">
         <p>홈페이지로 이동 <a href="https://www.coalasw.com">coalaSW</a>.</p>

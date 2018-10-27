@@ -18,7 +18,10 @@ var MSG = {
     catDrone: "드론",
     catInventory: "인벤토리",
 
-    catTeleport: "텔레포트 이용하기",
+    catMinecraft: "마인크래프트",
+    catMob: "몹",
+
+    catTeleport: "텔레포트",
     catFence: "울타리 만들기",
     catFarmland: "대규모 밀밭 만들기",
     catFarming: "자동화 농장",

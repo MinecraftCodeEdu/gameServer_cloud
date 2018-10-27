@@ -1,0 +1,68 @@
+    <table width="100%" height="100%">
+        <tr>
+	  <div align="center">
+	    <a href="/contents/0" class="btn btn-default">이전단계</a>
+	    <a href="/contents/1" class="btn btn-default">1</a>
+	    <a href="/contents/2" class="btn btn-default">2</a>
+	    <a href="/contents/3" class="btn btn-default">3</a>
+	    <a href="/contents/4" class="btn btn-default">4</a>
+	    <a href="/contents/5" class="btn btn-default">5</a>
+	    <a href="/contents/6" class="btn btn-default">6</a>
+	    <a href="/contents/7" class="btn btn-default">7</a>                <a href="/contents/8" class="btn btn-default">8</a>
+	    <a href="/contents/9" class="btn btn-default">다음단계</a>
+	  </div>
+        </tr>
+        <tr>
+            <td colspan=2>
+                <table width="100%">
+                    <tr id="tabRow" height="1em">
+                        <td id="tab_blocks" class="tabon"><%= title %></td>
+                        <td class="tabmin">&nbsp;</td>
+                        <td id="tab_javascript" class="taboff" style="display: none;"></td>
+                        <td class="tabmin">&nbsp;</td>
+                        <td id="tab_php" class="taboff" style="display: none;">php IS NOT SUPPORTED</td>
+                        <td id="tab_python" class="taboff" style="display: none;">Python IS NOT SUPPORTED</td>
+                        <!-- <td class="tabmin">&nbsp;</td> -->
+                        <td id="tab_dart" class="taboff" style="display: none;">Dart IS NOT SUPPORTED</td>
+                        <!-- <td class="tabmin">&nbsp;</td> -->
+                        <td id="tab_xml" class="taboff" style="display: none;">XML IS INVISIBLE</td>
+                        <td class="tabmax">
+                           <p>
+
+                             <a href="/" class="btn btn-default btn-sm">메인으로 이동</a>
+
+
+                          </p>
+<strong>minecraftID</strong>: <input type="text" id="mcid" value="<%= user.local.username %>" readonly>
+
+                            <!-- <button onclick="Code.savexml()">Save XML</button> -->
+                            <button onclick="filePrompt()">파일저장</button>
+                            <button id="fakeload">파일불러오기</button>
+                              <input type="file" id="loadxml" style="display: none;"/>
+                            <button id="fakeload1" style="display: none;">추가파일불러오기</button>
+                              <input type="file" id="loadextraxml" style="display: none;"/>
+                            <button id="linkButton" class="notext" style="display: none" title="">
+                                <img src='../google-blockly/media/1x1.gif' class="link icon21">
+                            </button>
+                            <button id="deployButton" class="notext primary" title="">
+                                <img src='../google-blockly/media/1x1.gif' class="run icon21">
+                            </button>
+                            <button id="trashButton" class="notext" title="">
+                                <img src='../google-blockly/media/1x1.gif' class="trash icon21">
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="99%" colspan=2 id="content_area">
+            </td>
+        </tr>
+    </table>
+    <div id="content_blocks" class="content"></div>
+    <pre id="content_javascript" class="content"></pre>
+    <pre id="content_php" class="content"></pre>
+    <pre id="content_python" class="content"></pre>
+    <pre id="content_dart" class="content"></pre>
+    <textarea id="content_xml" class="content" wrap="off"></textarea>

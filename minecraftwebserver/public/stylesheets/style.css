@@ -12,3 +12,63 @@ body {
 a {
   color: #00B7FF;
 }
+
+.bg-main { 
+    /* The image used */
+    background-image: url("../images/mainview.jpg");
+
+    /* Full height */
+    width: 100%;
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.bg-login { 
+    /* The image used */
+    background-image: url("../images/loginview.jpg");
+
+    /* Full height */
+    width: 100%;
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.bg-signup { 
+    /* The image used */
+    background-image: url("../images/signupview.jpg");
+
+    /* Full height */
+    width: 100%;
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.bg-forgot { 
+    /* The image used */
+    background-image: url("../images/forgotview.jpg");
+
+    /* Full height */
+    width: 100%;
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+

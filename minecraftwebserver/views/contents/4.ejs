@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <% include ./header.ejs %>
+</head>
+
+<body>
+    <% include ./body.ejs %>
+    <xml id="toolbox" style="display: none">
+		<!-- 대규모 밀밭 만들기 -->
+            <block type="drone"></block>
+			<block type="farmland_material"></block>
+			<block type="drone_move"></block>
+            <block type="controls_repeat_ext">
+                <value name="TIMES">
+                    <block type="math_number">
+                        <field name="NUM">10</field>
+                    </block>
+                </value>
+            </block>
+    </xml>
+
+
+</body>
+
+</html>
