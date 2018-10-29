@@ -502,7 +502,15 @@ Code.renderContent = function () {
         xmlTextarea.focus();
     } else if (content.id == 'content_javascript') {
         code = Blockly.JavaScript.workspaceToCode(Code.workspace);
-        content.textContent = code;
+	
+	var editor = ace.edit("content_javascript");
+        editor.setTheme("ace/theme/monokai");
+        editor.getSession().setMode("ace/mode/javascript");
+        editor.getSession().setUseWrapMode(true);
+        editor.setShowPrintMargin(false);
+        editor.setValue(code);
+
+        //content.textContent = code;
         if (typeof prettyPrintOne == 'function') {
             code = content.innerHTML;
             code = prettyPrintOne(code, 'js');

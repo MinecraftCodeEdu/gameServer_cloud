@@ -19,7 +19,7 @@ var MSG = {
     catInventory: "인벤토리",
 
     catMinecraft: "마인크래프트",
-    catMob: "몹",
+    catMob: "이벤트",
 
     catTeleport: "텔레포트",
     catFence: "울타리 만들기",
